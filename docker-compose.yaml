@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: scheduler-service
+    environment:
+      DATABASE_URL: "postgresql://leonardo:leonardo@db:5432/leonardo?schema=public"
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: leonardo
+      POSTGRES_PASSWORD: leonardo
+      POSTGRES_DB: leonardo
+    ports:
+      - '5432:5432'
