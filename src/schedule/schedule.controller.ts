@@ -3,7 +3,7 @@ import { ScheduleService } from './schedule.service';
 import { Schedule as ScheduleModel } from '@prisma/client';
 import { CreateScheduleDto, UpdateScheduleDto } from './schedule.dto';
 
-@Controller('api/v1/schedule')
+@Controller('api/v1/schedules')
 export class ScheduleController {
     constructor(private readonly scheduleService: ScheduleService) { }
 
