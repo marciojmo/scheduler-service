@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Param, Put, Delete, ParseUUIDPipe, HttpCod
 import { ScheduleService } from './schedule.service';
 import { Schedule as ScheduleModel } from '@prisma/client';
 import { CreateScheduleDto, UpdateScheduleDto } from './schedule.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('schedules')
 @Controller('api/v1/schedules')
 export class ScheduleController {
     constructor(private readonly scheduleService: ScheduleService) { }

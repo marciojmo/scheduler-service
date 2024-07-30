@@ -3,7 +3,8 @@ import { TaskService } from './task.service';
 import { Task as TaskModel } from '@prisma/client';
 import { ScheduleService } from 'src/schedule/schedule.service';
 import { CreateTaskDto, UpdateTaskDto } from './task.dto';
-
+import { ApiTags } from '@nestjs/swagger';
+@ApiTags('tasks')
 @Controller('api/v1/tasks')
 export class TaskController {
     constructor(private readonly taskService: TaskService, private readonly scheduleService: ScheduleService) { }
